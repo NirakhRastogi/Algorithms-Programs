@@ -15,29 +15,29 @@ public class QuickSort {
 
     private static void quickSort(int[] x, int start, int end) {
 
-        if (end - start <= 1)
+        if (end - start <= 0)
             return;
 
-        int pivot = start + (end - start) / 2;
+        int pivot = x[start + (end - start) / 2];
 
         int i = start;
         int j = end;
-        while (i < j) {
-            if (x[i] < x[pivot]) {
+        while (i <= j) {
+            while (x[i] < pivot) {
                 i++;
             }
-            if (x[j] > x[pivot]) {
+            while (x[j] > pivot) {
                 j--;
             }
-            if (x[i] >= x[pivot] && x[j] <= x[pivot]) {
+            if (i <= j) {
                 swap(x, i, j);
                 i++;
                 j--;
             }
         }
 
-        quickSort(x, start, pivot - 1);
-        quickSort(x, pivot + 1, end);
+        quickSort(x, start, j);
+        quickSort(x, i, end);
 
     }
 

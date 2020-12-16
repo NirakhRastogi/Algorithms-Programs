@@ -8,6 +8,7 @@ public class HeapSort {
         int[] x = new int[]{1, 5, 4, 7, 9, 7, 6, -1, -5};
         System.out.println(Arrays.toString(x));
         heapSort(x, -1);
+
         System.out.println(Arrays.toString(x));
     }
 
